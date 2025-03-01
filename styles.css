@@ -4,21 +4,20 @@
     padding: 0;
     box-sizing: border-box;  
     font-family:'Times New Roman', Times, serif;
-    
-    
 }
 
 
 
 .section-context{
-    max-width: 500px; 
+    max-width: 1500px; 
     margin: auto; 
     font-size: xx-large;
     text-align: center;
+    word-spacing: 30px;
 }
 
 header {
-    background-color: rgb(4,4, 18);
+    background-color: black;
 }
 .navbar .nav-logo .logo-text{
     color: white; 
