@@ -88,3 +88,14 @@ body{
     text-align: center;
     line-height: 50px; /* Center text vertically */
   }
+
+  .container {
+    display: flex; /* Enables Flexbox layout */
+    gap: 10px; /* Optional: Adds space between the elements */
+  }
+  .item {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
