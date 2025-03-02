@@ -39,6 +39,7 @@
                         <script>
                             // This function will be called when the button is clicked
                             function captureInput() {
+                                event.preventDefault();
                                 // Get the input element by its ID
                                 const userInput = document.getElementById("userInput").value;
 
