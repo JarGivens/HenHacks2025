@@ -88,6 +88,9 @@
                                 } else {
                                     result = "Incorrect. Try again!";
                                 }
+                                if(progressBar.value == 10){
+                                    result = "You finished! Good job!";
+                                }
                                 document.getElementById("result").textContent = result;
                             }
 
