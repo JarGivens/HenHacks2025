@@ -1,5 +1,5 @@
-# Easy_Project_Template
+# HelpingHen.Com
 
-This simple project template is designed to simplify the setup process for new programmers creating static websites.
+This website is a fun and interactive way for students with dyscalculia and/or dyslexia to easily learn math topics!
 
-Just fork the repository and start building! 😊
+This project was made by Zoey, Jacqueline, Amy, and Jack
