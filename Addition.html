@@ -34,18 +34,21 @@
                         <source src = "addition.mp3" type="audio/mpeg"></source>
                     </audio>
                     <form>
-                        <div class = "question">
-                            <p><button onclick="generateRandomNumbers()">Generate a problem</button></p>
-                            <span id="randomNumber1">0</span>
-                             <button style = background-color:skyblue onclick="playAudio()">  +  </button>
-                             <span id="randomNumber2">0</span>
-                             <p><input type="number" id="userInput" placeholder="0"></p>
-                             <p id="result"></p>
-                              <button onclick="captureInput()">Submit</button>
-                        </div>
-                        <progress id = "progressBar" value = "0" max = "10" class = "progress-bar"></progress>
+                        <p><button onclick="generateRandomNumbers()">Generate a problem</button></p>
+                        <div class="cube-container" id="cube-container-1"></div>
+                        <span id="randomNumber1">0</span>
+                        <button style = background-color:skyblue onclick="playAudio()">  +  </button>
+                        <span id="randomNumber2">0</span>
+                        <div class="cube-container" id="cube-container-2"></div>
+
                         
+                        <p><input type="number" id="userInput" placeholder="0"></p>
+                        <p id="result"></p>
+
+                        <button onclick="captureInput()">Submit</button>
                         <script>
+                            var num1 = 0;
+                            var num2 = 0;
 
                             function playAudio() {
                             event.preventDefault();
@@ -59,6 +62,7 @@
                                 num2 = Math.floor(Math.random() * 10) + 1;
                                 document.getElementById("randomNumber1").textContent = num1;
                                 document.getElementById("randomNumber2").textContent = num2;
+                                generateCubes(num1, num2);
                             }
                             function captureInput() {
                                 event.preventDefault();
@@ -66,14 +70,41 @@
                                 const answer = userInput;
                                 var result = "";
                                 if(answer == num1 + num2){
-                                    let progressBar = document.getElementById("progressBar"); 
-                                    progressBar.value += 1; 
                                     result = "Correct! Good job!";
                                 } else {
                                     result = "Incorrect. Try again!";
                                 }
                                 document.getElementById("result").textContent = result;
                             }
+
+                            
+                            function generateCubes(num1, num2) {
+                                // Generate two random numbers between 1 and 10
+
+                                // Get the two containers to place cubes inside
+                                const container1 = document.getElementById('cube-container-1');
+                                const container2 = document.getElementById('cube-container-2');
+                                
+                                // Clear the existing cubes in both containers
+                                container1.innerHTML = '';
+                                container2.innerHTML = '';
+
+                                // Generate the cubes for the first set
+                                for (let i = 0; i < num1; i++) {
+                                    const cube = document.createElement('div');
+                                    cube.classList.add('cube');
+                                    container1.appendChild(cube);
+                                }
+
+                                // Generate the cubes for the second set
+                                for (let i = 0; i < num2; i++) {
+                                    const cube = document.createElement('div');
+                                    cube.classList.add('cube');
+                                    container2.appendChild(cube);
+                                }
+                            }
+
+
                         </script>
                 </div>
             </div>
