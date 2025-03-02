@@ -1,4 +1,4 @@
-# HelpingHen.Com
+# TheHelpingHen.Com
 
 This website is a fun and interactive way for students with dyscalculia and/or dyslexia to easily learn math topics!
 
