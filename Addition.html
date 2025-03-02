@@ -34,18 +34,21 @@
                         <source src = "addition.mp3" type="audio/mpeg"></source>
                     </audio>
                     <form>
-                        <p><button onclick="generateRandomNumbers()">Generate a problem</button></p>
-                        <div class="cube-container" id="cube-container-1"></div>
-                        <span id="randomNumber1">0</span>
-                        <button style = background-color:skyblue onclick="playAudio()">  +  </button>
-                        <span id="randomNumber2">0</span>
-                        <div class="cube-container" id="cube-container-2"></div>
+                        <div class = "question">
+                            <p><button onclick="generateRandomNumbers()">Generate a problem</button></p>
+                            <div class="cube-container" id="cube-container-1"></div>
+                            <span id="randomNumber1">0</span>
+                            <button style = background-color:skyblue onclick="playAudio()">  +  </button>
+                            <span id="randomNumber2">0</span>
+                            <div class="cube-container" id="cube-container-2"></div>
+                            
+                            
+                            <p><input type="number" id="userInput" placeholder="0"></p>
+                            <p id="result"></p>
+                            <button onclick="captureInput()">Submit</button>
+                        </div>
+                        <progress id = "progressBar" value = "0" max = "10" class = "progress-bar"></progress>
 
-                        
-                        <p><input type="number" id="userInput" placeholder="0"></p>
-                        <p id="result"></p>
-
-                        <button onclick="captureInput()">Submit</button>
                         <script>
                             var num1 = 0;
                             var num2 = 0;
@@ -70,6 +73,8 @@
                                 const answer = userInput;
                                 var result = "";
                                 if(answer == num1 + num2){
+                                    let progressBar = document.getElementById("progressBar"); 
+                                    progressBar.value += 1; 
                                     result = "Correct! Good job!";
                                 } else {
                                     result = "Incorrect. Try again!";
