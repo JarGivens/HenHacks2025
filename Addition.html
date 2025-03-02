@@ -12,7 +12,7 @@
     <header>
         <nav class ="navbar section-content">
             <a href ="#" class = "nav-logo">
-                <h2 class ="logo-text"> Helping Hen</h2>
+                <h2 class ="logo-text"> The Helping Hen</h2>
             </a>
             <ul class = "nav-menu">
                 <li class ="nav-item">
@@ -34,12 +34,15 @@
                         <source src = "addition.mp3" type="audio/mpeg"></source>
                     </audio>
                     <form>
-                        <button onclick="generateRandomNumbers()">Generate a problem</button>
-                        <p id="randomNumber1"></p>
+                        <p><button onclick="generateRandomNumbers()">Generate a problem</button></p>
+
+                        <span id="randomNumber1">0</span>
                         <button style = background-color:skyblue onclick="playAudio()">  +  </button>
-                        <p id="randomNumber2"></p>
-                        <input type="number" id="userInput" placeholder="0">
+                        <span id="randomNumber2">0</span>
+
+                        <p><input type="number" id="userInput" placeholder="0"></p>
                         <p id="result"></p>
+
                         <button onclick="captureInput()">Submit</button>
                         <script>
                             var num1 = 0;
