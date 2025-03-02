@@ -30,39 +30,35 @@
             <div class="section-context">
                 <div class="hero-details">
                     <h2 class = "title">Addition</h2>
-
                     <form>
-                        <label for="answer">2 + 2:</label><br>
+                        <button onclick="generateRandomNumbers()">Generate a problem</button>
+                        <p id="randomNumber"></p>
                         <input type="number" id="userInput" placeholder="0">
                         <p id="result"></p>
                         <button onclick="captureInput()">Submit</button>
                         <script>
-                            // This function will be called when the button is clicked
+                            var num1 = 0;
+                            var num2 = 0;
+                            function generateRandomNumbers(){
+                                event.preventDefault();
+                                num1 = Math.floor(Math.random() * 10) + 1;
+                                num2 = Math.floor(Math.random() * 10) + 1;
+                                document.getElementById("randomNumber").textContent = num1 + "  +  " + num2;
+                            }
                             function captureInput() {
                                 event.preventDefault();
-                                // Get the input element by its ID
                                 const userInput = document.getElementById("userInput").value;
-
-                                // Store the input in a variable
                                 const answer = userInput;
-
-                                // Use the variable in a JavaScript function (e.g., displaying a greeting)
                                 var result = "";
-                                if(answer == 4){
+                                if(answer == num1 + num2){
                                     result = "Correct! Good job!";
                                 } else {
                                     result = "Incorrect. Try again!";
                                 }
-                                
-                                // Display the greeting in the <p> element
                                 document.getElementById("result").textContent = result;
                             }
                         </script>
-                                        <!--
-                                        <input type="text" id="answer" name="answer"><br>
-                                    </form>
-                                    <button onclick="checkAnswer(answer)"> -->
-                                </div>
+                </div>
             </div>
         </section>
     </main>
